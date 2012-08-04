@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @posting.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @posting.description %>
+</p>
+
+<p>
+  <b>Requirements:</b>
+  <%= @posting.requirements %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @posting.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @posting.state %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @posting.zipcode %>
+</p>
+
+<p>
+  <b>Salary:</b>
+  <%= @posting.salary %>
+</p>
+
+<p>
+  <b>Duration:</b>
+  <%= @posting.duration %>
+</p>
+
+<% if  csigned_in? %>
+	<%= link_to 'Make an Inquiry', inquiry_posting_path(@posting), class: "btn" %> 
+	<%=link_to 'Back', postings_path, class: "btn" %>
+<% end %>
+
+<% if  signed_in? %>
+      <%= link_to 'Edit', edit_posting_path(@posting), class: "btn" %> 
+	<%=link_to 'Back', current_company, class: "btn" %>
+
+	<% end %>
+
+<% if current_contractor.nil? and current_company.nil? %>
+	<br />
+	<h3> Want to Inquiry the company? Please sign in </h3>
+	<%= link_to "Sign In!", contractors_signin_path, class: "btn " %>
+	<%=link_to 'Back', contractors_search_path %>
+<% end %>
+<br />
+	<br />

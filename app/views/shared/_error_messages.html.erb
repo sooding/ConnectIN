@@ -1,0 +1,18 @@
+<% unless error_object.blank? %>
+  <% if error_object.errors.any? %>
+    <div id="error_explanation" class="error">
+      <p><strong>The following <%= error_object.errors.count == 1 ? "error" : "e\
+rrors" %> prevented this <%= error_object_name %> from being saved:</strong></p>
+      <ul>
+        <% error_object.errors.full_messages.each do |msg| %>
+    <% if not msg.include? "command" %>
+               <li><%= msg %></li>
+    <% else %>
+         <li>Unable to parse file. Check type.</li>
+    <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+

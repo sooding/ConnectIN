@@ -1,0 +1,83 @@
+<div class ="relative">
+<h1>Job Listings</h1>
+
+<table class = "table-condensed">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Requirements</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+    <th>Salary</th>
+    <th>Duration</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% if current_contractor.nil? and current_company.nil? %>
+	  <% @postings.each do |posting| %>
+		   <tr>
+    <td><%= posting.title %></td>
+    <td><%= posting.description %></td>
+    <td><%= posting.requirements %></td>
+    <td><%= posting.city %></td>
+    <td><%= posting.state %></td>
+    <td><%= posting.zipcode %></td>
+    <td><%= posting.salary %></td>
+    <td><%= posting.duration %></td>
+    <td><%=link_to "Enter", posting %>
+    </tr>
+    <% end %>
+
+
+<% end %>
+
+
+<% if signed_in? %>
+<% @postings.each do |posting| %>
+  <tr>
+    <td><%= posting.title %></td>
+    <td><%= posting.description %></td>
+    <td><%= posting.requirements %></td>
+    <td><%= posting.city %></td>
+    <td><%= posting.state %></td>
+    <td><%= posting.zipcode %></td>
+    <td><%= posting.salary %></td>
+    <td><%= posting.duration %></td>
+
+    <td><%= link_to 'Show', posting %></td>
+    <td><%= link_to 'Edit', edit_posting_path(posting) %></td>
+    <td><%= link_to 'Destroy', posting, confirm: 'Are you sure?', method: :delete %></td>
+
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+	<%= link_to 'New Posting', new_posting_path %>
+<% end %>
+
+<% if csigned_in? %>
+<% @postings.each do |posting| %>
+  <tr>
+    <td><%= posting.title %></td>
+    <td><%= posting.description %></td>
+    <td><%= posting.requirements %></td>
+    <td><%= posting.city %></td>
+    <td><%= posting.state %></td>
+    <td><%= posting.zipcode %></td>
+    <td><%= posting.salary %></td>
+    <td><%= posting.duration %></td>
+
+    <td><%=link_to "Enter", posting %>
+
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+
+
+</div>

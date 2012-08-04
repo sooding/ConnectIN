@@ -1,0 +1,19 @@
+<br />
+<div class="hero-unit">
+<h3>Search Result Page</h3>
+<h5>This is page for Searching Contractor Results</h5>
+	
+</div>
+
+<ul class="companies">
+  <% @company.each do |c| %>
+    <li><b><%= link_to c.title, c %></b>
+    <b><%= c.degree %></b></li><br />
+ <% end %>
+</ul>  	       
+        
+
+<br />
+<%=link_to "Back to Search", companies_search_path, class: "btn" %>
+
+

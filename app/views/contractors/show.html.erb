@@ -1,0 +1,47 @@
+<div class="hero-unit">
+<% if csigned_in? %>
+<h3><%= @contractor.firstname  + ' ' + @contractor.lastname%></h3>
+<b>Email:</b><%= @contractor.email %><br />
+<% end %>
+<b>Title:</b> <%= @contractor.title %>
+<br /><br />
+<u><h4>Education</h4></u>
+  <h5>School:</h5><%= @contractor.school %>
+  <h5>Degree:</h5><%= @contractor.degree %>
+  <br />
+
+<% if signed_in? %>
+  <u><h4>Location</h4></u>
+  <h5>City:</h5><%= @contractor.city %>
+  <h5>State:</h5><%= @contractor.state %>
+  <br /><br />
+  <u><h4>Skills</h4></u>
+  <%= @contractor.skills %><br />
+  <% end %><br />
+  
+<% if csigned_in? %>
+  <u><h4>Location</h4></u>
+  <h5>City:</h5><%= @contractor.city %>
+  <h5>State:</h5><%= @contractor.state %>
+   <br /><br />
+  <u><h4>Skills</h4></u>
+  <%= @contractor.skills %><br />
+   <% end %>
+</div>
+
+
+
+<% if csigned_in? %>
+<%= link_to 'Edit Profile', edit_contractor_path(@contractor), class: "btn"%> 
+<% end %>
+<% if signed_in? %>
+	<%= link_to "Know more about this Contractors", ContractorProfile.find_by_contractor_id(params[:id]), class: "btn"  %> 
+<%end %>
+<% if current_contractor.nil? and current_company.nil? %>
+	<%= link_to 'Back', companies_search_path, class: "btn" %><br />
+
+     <b>Want to know more about this contractor? Please sign in.</b>	<%= link_to 'Sign in', companies_signin_path, class: "btn" %> 
+<% end %>
+</div>
+
+<br />

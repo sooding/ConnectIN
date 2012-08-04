@@ -1,0 +1,75 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.span-7 {
+width:300px;
+padding: 10px;
+}
+
+.span-14 {
+width:500px;
+padding: 10px;
+position:relative;
+left:20%;
+background:#D0D0D0;
+height: 250px;
+text-align: center;
+line-height:250px;
+margin:10px;
+}
+
+
+.span-page {
+width: 940px;
+height: 380px;
+position:relative;
+right:2%;
+background: #EEE;
+}
+.contractors-box{
+position:relative;
+left:10%;
+background:#C0C0C0;
+height: 250px;
+text-align: center;
+line-height:250px;
+}
+
+.companies-box {
+position:relative;
+left:15%;
+background: #C0C0C0;
+height: 250px;
+text-align: center;
+line-height:250px;
+}
+
+a.home_button {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+  width: 150px;
+  height: 20px;
+  color: #fff;
+  background: #0074CC;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
+footer {
+  background: black;
+  width:940px;
+  height:3px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}

@@ -1,0 +1,15 @@
+<div class="hero-unit">
+<h3>Search Result Page</h3>
+<h5>This is page for Searching Posting Results</h5>
+	
+</div>
+<ul class="companies">
+        <% @posting.each do |p| %>
+                <li><%= link_to p.title, p %><br /></li>
+        <% end %>
+</ul>
+
+<br />
+<%=link_to "Back", contractors_search_path, class: "btn" %>
+	
+	

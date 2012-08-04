@@ -1,0 +1,20 @@
+<div class = "hero-unit">
+<div class="row">
+<div class="span6 offset3">
+<%= form_for @contractor, :html => {:class => "form-horizontal"} do |f| %>
+    <h2>Sign Up</h2>
+
+    <%= f.label :firstname, "First Name" %>
+    <%= f.text_field :firstname %> 
+    <%= f.label :lastname, "Last Name" %>
+    <%= f.text_field :lastname %> 
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %> <br /> <br /> 
+    <%= f.submit signup_message, class: "btn btn-large btn-primary" %>
+
+<% end %>
+</div>
+</div>
+</div>

@@ -1,0 +1,75 @@
+<h1>Company Profile</h1>
+<h2>This is page for company Profile</h2>
+<div class="row">
+		<img src='#' alt="Your picture"> 	
+	<div class="span6 offset3">
+		
+	<table border="1">
+	<form action="#">
+
+		<p>
+		<b>Name:</b>
+                <%=@Company.name %>
+		</p>
+                <p>
+		<b>Induatry:</b>
+                <%=@Company.industry %>
+		</p>
+                <p>
+		<b>Contracts available now:</b>
+                <%="none" %>
+		</p>
+                <p>
+		<b>Contact Information:</b>
+                <%="none" %>
+		</p>
+                <% if signed_in? %>
+		<p>
+		<b>Password:</b>
+                <%=@Company.password %>
+		</p>
+		<p>
+		<b>Supervisor:</b>
+                <%="none" %>
+		</p>
+		        
+		<% end%>
+
+
+    
+	</table>
+	</div>
+	<% if signed_in? %>
+		<%= link_to "Search", csearch_path, class: "btn btn-large btn-primary" %>
+	<% end %>
+
+</div>
+
+
+
+
+	<tr>
+		<th>Name</th>
+		<th>Industry</th>
+		<th>Contracts available now</th>
+		<th>Contact Information</th>
+		<% if signed_in? %>
+			<th>Password</th>
+			<th>supervisor</th>
+		        
+		<% end%>
+		
+       </tr>
+
+       <tr> 
+                <td><%= @Company.name %></td>
+		<td><%= @Company.industry %></td>
+		<td>None</td>
+		<td>None</td>
+		<% if signed_in? %>
+			<td><%=@Company.password %></td>
+			<td>None</td>
+		<%end%>	
+		
+
+	</tr>

@@ -1,0 +1,57 @@
+<div class="hero-unit">
+<%= form_for(@posting) do |f| %>
+  <% if @posting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@posting.errors.count, "error") %> prohibited this posting from being saved:</h2>
+
+      <ul>
+      <% @posting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h3>Submit a new Job Posting</h3>
+</div>
+
+  <div class="field">
+    <%= f.label :title, "Title of Position" %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :degree, "Degree Seeked" %>
+    <%= f.text_field :degree %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Description of Position" %>
+    <%= f.text_area :description, :rows =>"3", :cols=>"30" %>
+  </div>
+  <div class="field">
+    <%= f.label :requirements %>
+    <%= f.text_field :requirements, :rows =>"3", :cols=>"30" %>
+  </div>
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %>
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %>
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+    <%= f.label :salary, "Salary Offered" %>
+    <%= f.text_field :salary %>
+  </div>
+  <div class="field">
+    <%= f.label :duration, "Duration of Project" %>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Create New Job Posting" %>
+  </div>
+<% end %>

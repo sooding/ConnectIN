@@ -1,0 +1,76 @@
+<% if csigned_in? %>
+  <h4>Your Inqueries:</h4>
+	<% @opinions.each do |o| %>
+		 
+		<%if current_contractor.id == o.contractor_id %>
+			<div class="postingtitle"><h3>The posting title:             <%=o.posting.title %></h3></div>
+			<h4>Your Inqueries:</h4>
+			  <div class="content"><%= o.content %></div>
+			  <div class="time"><%= time_ago_in_words(o.created_at).capitalize %> ago</div>
+			  <br />
+<%end %>
+
+<% if not o.replies.empty? %>
+	<%if current_contractor.id == o.contractor_id %>
+	    <% o.replies.each do |r| %>
+		    <h4>Response</h4>
+        <%= render partial: 'shared/reply_chunk.all.erb', locals: {r: r} %>
+<% end %>
+<%end %>
+    <% end %>
+---------------------------------------------
+<% end %>
+<% end %>
+
+<% if signed_in? %>
+	<br />
+	<br />
+	
+	<br />
+<% @opinions.each do |o| %>
+	<div class="opinion">
+			<div class="postingtitle"><h3>The posting title:             <%=o.posting.title %></h3></div>
+		 <h4><%= "Contractor Inquiries:  "%></h4>
+	<h5>	<div class="firstname"> Name: <%= o.contractor.firstname %></div></h5>
+			  
+		 <div class="content"><%= o.content %></div>
+			  <div class="time"><%= time_ago_in_words(o.created_at).capitalize %> ago</div>
+			  
+                          
+				
+					  
+					 
+		
+		 
+
+			  <% if not o.replies.empty? %>
+				   <h4>Your Response</h4>
+      <% o.replies.each do |r| %>
+        <div class="reply">
+<div class="content"><%= r.content %></div>
+<div class="time"><%= time_ago_in_words(r.created_at).capitalize %> ago</div>
+--------------------------------
+
+</div>
+	    <% end %>
+    <% end %>
+    <% if o.replies.empty? %>
+	    <h4>Your Response</h4>
+	    <% @id=o.id %>
+	    <%@cid = o.contractor_id %>
+	     <%@reply.update_attributes(opinion_id: @id) %>
+	     <%@reply.update_attributes(contractor_id: @cid) %>
+	      <%= form_for(@reply ) do |f| %>
+					
+					 <%= f.text_area :content, cols: 20, rows:3 %>
+				                                                  
+                                          <%= f.submit "respond" %>
+                           </div>
+                                      <% end %>
+    
+			      <% end %>
+			      <br />
+			      <br />
+	  <% end %>
+  <% end %>
+

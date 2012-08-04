@@ -1,0 +1,5 @@
+<div class="opinion">
+<div class="firstname"><%= o.contractor.firstname %></div>
+<div class="time"><%= time_ago_in_words(o.created_at).capitalize %> ago</div>
+<div class="content"><%= o.content %></div>
+</div>

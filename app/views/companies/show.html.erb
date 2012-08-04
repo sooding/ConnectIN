@@ -1,0 +1,24 @@
+<div class = "hero-unit" >
+<h3><%= @company.name%> Profile</h3>
+<h5><a href = @company.link><%= @company.link %></a></h5>
+<h5>Industry:<%=@company.industry %></h5>
+
+<% if signed_in? %>
+<%=link_to "Edit your profile", edit_company_path %>
+<%=link_to "Add a new job posting", new_posting_path, class:"btn" %>
+<% end %>
+</div>
+
+<%= provide(:title, 'All available job posts') %>
+<br />
+<h3> Current Postings</h3>
+<ul class="companies">
+<% if @company.postings.nil? %>
+<p>There are no available job posts at this time</p>
+<% end %>
+<% else %>
+<% @posting.each do |p| %>
+	<li> <%=link_to p.title, p%>
+<% end %>
+</ul>
+

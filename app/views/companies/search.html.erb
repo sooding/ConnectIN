@@ -1,0 +1,36 @@
+<div class="hero-unit" >
+<br />
+			<h2>Project Clients Search</h2>
+			<h5>Search for contractors who seek employment</h5>
+<br />
+
+<%= form_tag companies_path, :method => 'get' do %>
+<div class="span-7">
+     <%= label_tag(:skills) %><%= text_field_tag :skills, params[:skills] %>
+     <%= label_tag(:degree) %><%= text_field_tag :degree, params[:degree] %>
+</div>
+<div class="span-7">
+     <%= label_tag(:profession) %><%= text_field_tag :profession, params[:profession] %>
+     <%= label_tag(:title) %><%= text_field_tag :title, params[:title] %>
+</div>
+
+<br /><br /><br />
+     <%= submit_tag "Search", :class=> 'btn btn-large btn-primary', :name => nil %>
+<% end %>
+<br />
+</div>
+<u><h3>All Contractors</h3></u>
+
+<ul class="companies">
+  <% @contractors.each do |c| %>
+    <li>
+  <b><%= link_to c.title, c %></b><br />
+  <b><%= c.degree %></b>
+ 
+    </li>
+  <% end %>
+</ul>
+
+<br />
+<br />
+

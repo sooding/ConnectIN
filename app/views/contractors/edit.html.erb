@@ -1,0 +1,61 @@
+<div class = "hero-unit" >
+<% provide(:title, "Edit your profile") %> 
+<h2>Update your profile</h2>
+
+<div class="row">
+  <div class="span6 offset3">
+<%= form_for(@contractor) do |f| %>
+     
+
+      <%= f.label :firstname, "First Name"  %>
+      <%= f.text_field :firstname %>
+
+      <%= f.label :lastname, "Last Name" %>
+      <%= f.text_field :lastname %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+
+
+
+<h3>Educational Background:</h3>
+<div class="field">
+  <%= f.label:school %>
+  <%= f.text_field :school %>
+</div>
+<div class="field">
+  <%= f.label:degree %>
+  <%= f.text_field :degree %>
+</div>
+
+<h3>Professional Information:</h3>
+<div class="field">
+<%= f.label :title, "Your Profession" %>
+<%= f.text_field :title %>
+</div>
+<div class="field">
+  <%= f.label:skills %>
+  <%= f.text_area :skills, :rows =>"3", :cols=>"30" %>
+</div>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      
+  <h3>Your Location:</h3>
+  <div class="field">
+    <%= f.label:city %>
+  <%= f.text_field :city %>
+  <div class="field">
+    <%= f.label:state %>
+  <%= f.text_field :state %>
+
+    
+      <br />
+      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+    <% end %>
+     </div>
+   </div>
+ </div>
+ 
+

@@ -1,0 +1,27 @@
+<div class = "hero-unit" >
+	<div class="row">
+		<div class="span6 offset2">
+
+			<%=form_for(@company) do |c| %>
+				<h2>Company signup</h2>
+				<%=c.label :name %>
+				<%=c.text_field :name %>
+
+				<%=c.label :industry %>
+				<%=c.text_field :industry %>
+				
+				<%=c.label :link, "Company Email" %>
+	                        <%=c.text_field :link %>
+
+				<%=c.label :password %>
+				<%=c.password_field :password %>
+	                        <br />
+				<%=c.submit "Create your account", class: "btn" %>
+			<% end %>
+		
+		</div>
+
+	</div>
+</div>
+
+

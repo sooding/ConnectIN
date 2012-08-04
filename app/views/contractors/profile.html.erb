@@ -1,0 +1,13 @@
+<div class="hero-unit">
+<h3><%= @contractor.firstName.capitalize! %> <%= @contractor.lastName.captialize! %></h3>
+ <b>Email:</b>
+  <%= @contractor.email %>
+  </p>
+Salary: <%= @contractor.salary %><br />
+<h4>Education</h4>
+<%= @contractor.school %>
+<%= @contractor.degree %>
+<br />
+<h4>Skills:</h4>
+<%= @contractor.skills %>
+</div>

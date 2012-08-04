@@ -1,0 +1,46 @@
+<div class= "hero-unit" >
+<h3>ContractON has closed 1000 projects in   30 countries since 2012. </h3>
+</div>
+	
+<div class="span-page round" >
+<br /><br /><br />
+<% if signed_in? %>
+<div class="span-14">
+                <p><h3>Project Clients: </h3></p>
+<p><%=link_to "View my profile", current_company, class: "home_button round" %></p>
+<p><b><%=link_to "Search Contractors", companies_search_path, class: "home_button round" %></b></p>
+<p><b><%= link_to "Post a New Project", new_posting_path, class: "home_button round" %></b>
+<p><b><%=link_to "View messages", message_path, class: "home_button round" %></b></p>
+<p><b><%=link_to "My Contracts", '#', class: "home_button round" %></b></p>
+</div>
+<% end %>
+<% if csigned_in? %>
+<div class="span-14">
+	    <p><h3>Contractors:</h3></p>
+	       <p><b><%=link_to "View my profile", current_contractor, class: "home_button round" %></b></p>
+	       <p><b><%=link_to "View messages", message_path, class: "home_button round" %></b></p>
+		<p><b><%= link_to "Search Projects", contractors_search_path, class: "home_button round" %></b></p>
+		<p><b><%=link_to "My Contracts", '#', class: "home_button round" %></b></p>
+</div>
+<% end %>
+
+<% if !signed_in? and !csigned_in?%>
+	<div class="span-7 contractors-box">
+    <p><h3><u>Enter As A Contractor:</u></h3></p>
+    <p><b>Build your portfolio.  Share your brand with a global audience.</b></p>
+    <p><b><%= link_to "Sign In", contractors_signin_path, class: "home_button round" %></b></p>
+	<p><b><%= link_to "Search for Projects", contractors_search_path, class: "home_button round" %></p>
+<p><%= link_to "Create An Account", contractors_signup_path, class: "home_button round" %></p>
+
+	     </div>
+	     <div class="span-7 companies-box">
+		<p><h3><u>Enter As A Project Client: </u></h3></p>
+		<p> Search the World. Build your Team. <br /></p>
+		<p><%= link_to "Sign In", companies_signin_path, class: "home_button round" %></p>
+		<p><b><%=link_to "Search Contractors", companies_search_path, class: "home_button round" %></p>
+		<p><%= link_to "Create An Account", companies_signup_path, class: "home_button round" %></p>
+<!--<p><%= link_to "Post a Project", companies_search_path, class: "home_button round" %></p> -->
+	     </div>
+<% end %>
+</div>
+<br /><br /><br />
