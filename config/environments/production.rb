@@ -1,4 +1,4 @@
-ContractON::Application.configure do
+ConnectIN::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
@@ -66,8 +66,8 @@ ContractON::Application.configure do
   config.action_mailer.smtp_settings = {
 	  :address              => 'smtp.gmail.com',
 	  :port                 => 587,
-	  :user_name            => 'wenweixian2012',
-	  :password             => 'wov123wov',
+	  :user_name            => 'connectin2012',
+	  :password             => 'connectin2012',
 	  
 	 
 	  :authentication       => :plain

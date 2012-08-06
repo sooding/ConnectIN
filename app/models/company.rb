@@ -1,7 +1,8 @@
 class Company < ActiveRecord::Base
   attr_accessible :industry, :name, :password, :link  
   has_many :postings
-
+  has_secure_password
+  
   validates :name, presence: true, length: { maximum:50 }
   validates :industry, presence: true, length: { maximum:50 }
   validates :password, :on=> :create, length: { minimum: 6 }

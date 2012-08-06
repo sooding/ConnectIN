@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ContractON::Application.load_tasks
+ConnectIN::Application.load_tasks

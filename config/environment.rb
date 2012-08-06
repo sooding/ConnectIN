@@ -6,6 +6,6 @@ devel_env = Rails.root.join('config', 'devel_env.rb')
 load(devel_env) if File.exists?(devel_env) and not Rails.env.production?
 
 # Initialize the rails application
-ContractON::Application.initialize!
+ConnectIN::Application.initialize!
 
 

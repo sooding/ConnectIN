@@ -1,4 +1,4 @@
-ContractON::Application.routes.draw do
+ConnectIN::Application.routes.draw do
   root :to => 'static_pages#home'
 
   resources :replies

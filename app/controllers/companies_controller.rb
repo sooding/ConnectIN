@@ -8,7 +8,7 @@ class CompaniesController < ApplicationController
 	  if @company.save
 		  UserMailer.welcome_email(@company).deliver
 		  sign_in @company
-		  flash[:success] = "Welcome to ContractON!"
+		  flash[:success] = "Welcome to ConnectIN!"
 		  redirect_to root_path
 	  else
 		  render 'new'
